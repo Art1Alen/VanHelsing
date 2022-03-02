@@ -37,7 +37,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - Player
   - Ground
@@ -46,9 +46,9 @@ TagManager:
   - PlayerWeapon
   - PuppetMaster
   - Camera
+  - MiddleTrent
   - 
-  - 
-  - 
+  - LargeBolt
   - 
   - 
   - 

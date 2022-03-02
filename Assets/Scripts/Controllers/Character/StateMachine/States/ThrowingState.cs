@@ -31,8 +31,12 @@ namespace BeastHunter
         {
             _stateMachine.BackState.CountSpeed();
             ControlMovement();
-            ControlAimingTarget();
             CountExtiTime();
+<<<<<<< Updated upstream
+            ControlAimingTarget();
+=======
+            ControlAimingTarget();        
+>>>>>>> Stashed changes
             _stateMachine.BackState.UpdateAimingDotsForProjectile();
         }
 
@@ -49,7 +53,6 @@ namespace BeastHunter
         public override void Initialize(CharacterBaseState previousState = null)
         {
             base.Initialize();
-
             _characterModel.CurrentWeaponData.Value.MakeSimpleAttack(out _attackIndex, _characterModel.CharacterTransform);
             _exitTime = _characterModel.CurrentWeaponData.Value.CurrentAttack.AttackTime;
         }

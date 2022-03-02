@@ -20,14 +20,15 @@ MonoBehaviour:
     _pitch: 0
     _doLoop: 0
   _collisionSound:
-    _soundClip: {fileID: 0}
+    _soundClip: {fileID: 8300000, guid: e1d85ca30d317384a84a5bd2d759d8c9, type: 3}
     _volume: 0
     _pitch: 0
     _doLoop: 0
   _projectileDamage:
-    PhysicalDamage: 0
-    StunProbability: 0
-    FireDamage: 0
+    PhysicalDamageType: 0
+    PhysicalDamageValue: 0
+    ElementDamageType: 1
+    ElementDamageValue: 4
   _isDestroyedAfterInstantiation: 0
   _isDestroyedAfterHit: 0
   _timeToDestroyAfterInstantiation: 0

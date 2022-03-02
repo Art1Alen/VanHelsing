@@ -66,10 +66,26 @@ namespace BeastHunter
                     break;
             }
 
-            _characterModel.CurrentWeaponData.Value.MakeSimpleAttack(out _attackIndex, _characterModel.CharacterTransform);
-            _exitTIme = _characterModel.CurrentWeaponData.Value.CurrentAttack.AttackTime;
+            if (_characterModel.IsLongAttack)
+            {
+                StateName = CharacterStatesEnum.LongAttacking;
+                _characterModel.CurrentWeaponData.Value.MakeSpecialAttack(out _attackIndex, _characterModel.CharacterTransform);
 
-            _stateMachine.BackState.StopCharacter();
+                if (_characterModel.IsHoldAttack)
+                {
+                    StateName = CharacterStatesEnum.HoldAttacking;
+                    _characterModel.CurrentWeaponData.Value.MakeSimpleHoldAttack(out _attackIndex, _characterModel.CharacterTransform);
+                }
+                else
+                {
+                    StateName = CharacterStatesEnum.Attacking;
+                    _characterModel.CurrentWeaponData.Value.MakeSimpleAttack(out _attackIndex, _characterModel.CharacterTransform);
+                }
+                _exitTIme = _characterModel.CurrentWeaponData.Value.CurrentAttack.AttackTime;
+
+                _stateMachine.BackState.StopCharacter();
+
+            }
         }
 
         public override void OnExit(CharacterBaseState nextState = null)
